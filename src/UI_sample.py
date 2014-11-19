@@ -16,11 +16,12 @@
 __author__ = 'kmcdowel'
 
 import sys
-from PyQt4 import QtGui
+import PyQt4
+
 
 def main():
-    app = QtGui.QApplication(sys.argv)
-    window = QtGui.QWidget()
+    app = 
+    window = PyQt4.QtGui.QWidget()
     window.resize(250,150)
     window.move(300,300)
     window.setWindowTitle("Test UI")
@@ -29,4 +30,3 @@ def main():
     sys.exit(app.exec_())
 if __name__ == '__main__':
     main()
-    
