@@ -1,5 +1,5 @@
 # This client is designed to easily interact with Webmetrics' API.
-# Copyright (C) 2014  Shane Barbetta
+# Copyright (C) 2014-2015  Keith McDowell
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,27 +13,20 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-__author__ = 'Shane Barbetta'
-__author__ = 'Keith McDowell'
+__author__ = 'kmcdowel'
 
 import sys
 from PyQt4 import QtGui
-import wm_api_client
 
 def main():
-    app = QtGui.Qapplication(sys.argv)
+    app = QtGui.QApplication(sys.argv)
+    window = QtGui.QWidget()
+    window.resize(250,150)
+    window.move(300,300)
+    window.setWindowTitle("Test UI")
+    window.show()
 
-if len(sys.argv) != 3:
-	raise Exception('Expected use: python sample.py username api_key')
-	
-username = sys.argv[1]
-api_key = sys.argv[2]
-
-c = wm_api_client.ApiClient(username, api_key)
-
-print 'get services %s ' % c.get_services()
-print 'set notepad %s' % c.set_notepad('A string of text to test the notepad')
-print 'get notepad %s ' % c.get_notepad()
-print 'get service type %s ' % c.get_service_type('260726')
-print 'add new service %s ' % c.add_new_service('test_mc_test_service', 'PING')
-print 'reset service %s ' % c.reset_service('260723')
+    sys.exit(app.exec_())
+if __name__ == '__main__':
+    main()
+    
