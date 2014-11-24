@@ -15,19 +15,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 __author__ = 'kmcdowel'
 
+# UIMainWindow
 import sys
-import connection
-import wm_api_client
-from PyQt5.QtCore import *
-from PyQt5.QtWidgets import *
-from PyQt5.uic import loadUi
+from PyQt5 import QtCore, QtGui, uic, QtWidgets
+
+form_class = uic.loadUiType("uiSimpleClient.ui")[0]  # Load the UI
 
 
+class WindowClass(QtWidgets.QMainWindow, form_class):
+    def __init__(self, parent=None):
 
-if __name__ == '__main__':
- app = QApplication(sys.argv)
- widget = loadUi('uiSimpleClient.ui')
- widget.show()
- sys.exit(app.exec_())
-
+    QtWidgets.QMainWindow.__init__(self,parent,0)
 
