@@ -26,21 +26,20 @@ class editLineBox(QLineEdit):
   def __init__(self, parent =None):
    print 'Enter editlineBox'
    super(editLineBox,self).__init__(parent)
-   self.userName = QLineEdit()
-   #self.userName.setReadOnly(True)
-   self.userName.text()
+   self.userName = QLineEdit.text.__str__()
    u = self.userName
    print u
 
-
+class goButton(QPushButton):
+ def __init__(self,parent =None):
+  super(goButton,self).__init__(parent)
+  goButton.actionEvent()
 
 if __name__ == '__main__':
  app = QApplication(sys.argv)
  window = loadUi('uiSimpleClient.ui')
  getUser = editLineBox()
  window.show()
- getUser.show()
- print getUser
  sys.exit(app.exec_())
 
 
