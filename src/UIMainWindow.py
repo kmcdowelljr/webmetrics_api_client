@@ -21,9 +21,13 @@ from PyQt5 import QtCore, QtGui, uic, QtWidgets
 
 form_class = uic.loadUiType("uiSimpleClient.ui")[0]  # Load the UI
 
+#---------------------------------------------------------------------
+# In the single inheritance approach:
+#--------------------------------------------------------------------
 
 class WindowClass(QtWidgets.QMainWindow, form_class):
     def __init__(self, parent=None):
 
-    QtWidgets.QMainWindow.__init__(self,parent,0)
-
+        QtWidgets.QMainWindow.__init__(self, parent)
+        self.ui = uic.loadUiType("uiSimpleClient.ui", self)
+        self.connectNotify(self.ui.actionEvent(open())),QtCore.QSignalTransition('trigge')

@@ -18,16 +18,29 @@ __author__ = 'kmcdowel'
 import sys
 import connection
 import wm_api_client
-from PyQt5.QtCore import *
+from PyQt5.QtCore import  pyqtSlot, pyqtSignal
 from PyQt5.QtWidgets import *
 from PyQt5.uic import loadUi
+
+class editLineBox(QLineEdit):
+  def __init__(self, parent =None):
+   print 'Enter editlineBox'
+   super(editLineBox,self).__init__(parent)
+   self.userName = QLineEdit()
+   #self.userName.setReadOnly(True)
+   self.userName.text()
+   u = self.userName
+   print u
 
 
 
 if __name__ == '__main__':
  app = QApplication(sys.argv)
- widget = loadUi('uiSimpleClient.ui')
- widget.show()
+ window = loadUi('uiSimpleClient.ui')
+ getUser = editLineBox()
+ window.show()
+ getUser.show()
+ print getUser
  sys.exit(app.exec_())
 
 

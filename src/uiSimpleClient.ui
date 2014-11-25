@@ -87,7 +87,7 @@
     <string>Webmetrics UserName:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="userName">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -110,7 +110,7 @@
     <string>Webmetrics API KEY:</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="apiKEY">
    <property name="geometry">
     <rect>
      <x>120</x>
@@ -152,6 +152,38 @@
     <hint type="destinationlabel">
      <x>286</x>
      <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>userName</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>userName</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>29</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>29</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>apiKEY</sender>
+   <signal>textEdited(QString)</signal>
+   <receiver>apiKEY</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>245</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>49</y>
     </hint>
    </hints>
   </connection>
